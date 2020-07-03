@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Welcome to our web application</h1>
+
+<h2>This form help you to check if your password has been leaked</h2>
+@using (Html.BeginForm("Check", "Home", FormMethod.Post,
+                                    new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        Type your password : <input type="text" name="pass" />
+        <input type="submit" value="Submit" />
+    </fieldset>
+}
